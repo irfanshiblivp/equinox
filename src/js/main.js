@@ -52,4 +52,38 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === modal) hideModal();
         });
     }
+
+    // Mobile Button Visibility Logic
+    const mobileCta = document.getElementById('mobile-cta');
+    const pageButtons = document.querySelectorAll('main .book-trigger'); // Select buttons in main content only
+
+    if (mobileCta && pageButtons.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            // Check if ANY page button is visible
+            let anyVisible = false;
+            entries.forEach(entry => {
+                if (entry.isIntersecting) anyVisible = true;
+            });
+
+            // If any page button is visible, HIDE the mobile CTA
+            // However, IntersectionObserver fires for each element. We need global state or just simple toggle.
+            // Simplest: If the entry is intersecting, we hide CTA. If it leaves, we need to check if others are visible.
+            // Actually, simpler logic: If we scroll past the first button, show CTA?
+            // User request: "if one register now button visible hide dont show the other one"
+            // So: If entry.isIntersecting -> Hide CTA. Else -> Show CTA.
+
+            // Note: This naive approach might flicker if multiple buttons are on page.
+            // But usually only one is in view at a time.
+
+            const isVisible = entries.some(entry => entry.isIntersecting);
+            if (isVisible) {
+                mobileCta.classList.add('hidden');
+            } else {
+                mobileCta.classList.remove('hidden');
+            }
+        }, { threshold: 0.1 });
+
+        pageButtons.forEach(btn => observer.observe(btn));
+    }
+
 });

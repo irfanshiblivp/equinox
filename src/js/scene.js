@@ -7,8 +7,8 @@ let particles = [];
 // Configuration for "Professional Tech Touch"
 const config = {
     count: 80,             // Not too crowded
-    color: '0, 243, 255',  // Cyan base
-    baseOpacity: 0.4,      // Increased visibility
+    color: '0, 243, 255',  // #00f3ff (Cyan - Original)
+    baseOpacity: 0.4,      // Maintained visibility
     rangeOpacity: 0.3,     // Variation
     speed: 0.2,            // Very slow drift
     sizeBase: 1,           // Tiny dots/squares
