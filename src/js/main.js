@@ -1,5 +1,6 @@
 import '../css/style.css';
 import { initScene } from './scene.js';
+import { startCountdown } from './countdown.js';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -7,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
     initScene();
+    startCountdown('December 21, 2025 00:00:00');
 
     // Intro Animation (Robust - ensure visibility at end)
     const tl = gsap.timeline();
