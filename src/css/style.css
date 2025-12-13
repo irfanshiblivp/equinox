@@ -56,7 +56,7 @@ body {
 main {
     position: relative;
     z-index: 10;
-    padding: 1rem 1rem 8rem 1rem;
+    padding: 1rem 1rem 2rem 1rem;
 }
 
 .container {
@@ -398,4 +398,60 @@ iframe {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 0.2rem;
+}
+
+/* --- Footer --- */
+#main-footer {
+    padding: 3rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.2);
+    /* Slight background to separate */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+}
+
+.social-icon svg {
+    fill: var(--text-light);
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease;
+}
+
+.social-icon:hover {
+    background: rgba(0, 243, 255, 0.1);
+    border-color: var(--accent-primary);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+.social-icon:hover svg {
+    fill: var(--accent-primary);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    #main-footer {
+        padding-bottom: 6rem;
+        /* Ensure content clears the fixed Mobile CTA */
+    }
 }
