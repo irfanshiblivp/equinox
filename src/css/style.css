@@ -325,7 +325,7 @@ iframe {
 
 /* --- Map --- */
 .map-section {
-    padding-bottom: 6rem;
+    padding-bottom: 2rem;
 }
 
 .map-wrapper {
@@ -451,7 +451,7 @@ iframe {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     #main-footer {
-        padding-bottom: 6rem;
+        padding-bottom: 3rem;
         /* Ensure content clears the fixed Mobile CTA */
     }
 }
